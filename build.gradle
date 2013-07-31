@@ -1,0 +1,23 @@
+apply plugin:'java'
+apply plugin:'eclipse'
+
+group = 'de.emesit'
+version = '1.0.0'
+
+defaultTasks 'build'
+
+dependencies {
+  compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src'
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.6'
+}
